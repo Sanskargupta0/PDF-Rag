@@ -1,11 +1,9 @@
 
 import { useEffect, useRef } from "react";
 import { AnimatedBackground } from "@/components/animated-background";
-import { Header } from "@/components/header";
 import { PDFUpload } from "@/components/pdf-upload";
 import { QueryDemo } from "@/components/query-demo";
 import { FAQSection } from "@/components/faq-section";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/feature-card";
 import { Book, CloudUpload, Eye } from "lucide-react";
@@ -38,9 +36,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <AnimatedBackground />
-      <Header />
       
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-screen px-4 pt-16">
@@ -90,9 +87,10 @@ const Index = () => {
       <section 
         ref={featureSectionRef}
         className="py-24 px-4"
+        id="features"
       >
         <div className="container max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 gradient-heading features-title">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-40 gradient-heading features-title">
             Powerful Features
           </h2>
           
@@ -147,9 +145,7 @@ const Index = () => {
           </Button>
         </div>
       </section>
-      
-      <Footer />
-    </div>
+    </>
   );
 };
 
